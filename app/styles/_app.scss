@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', 'Avenir', Helvetica, Arial, sans-serif;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+header[role=banner] {
+  background: url('/assets/space-photo.jpeg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+
+  &:before {
+    background: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  a {
+    color: #fff;
+    left: 40px;
+    position: absolute;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 10px;
+  }
+
+  h1 {
+    font-weight: 300;
+    line-height: 250px;
+    position: relative;
+  }
+
+  button {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+  }
+}
+
+main[role=main] {
+  background: #eee;
+  padding: 40px 40px 0;
+}
+
+footer[role="contentinfo"] {
+  background: #eee;
+  padding: 40px;
+
+  &:before,
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  p {
+    float: left;
+  }
+
+  .back-to-top {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid;
+    cursor: pointer;
+    float: right;
+  }
+}
+
+.filterable-list {
+  ul {
+    list-style: none;
+  }
+
+  .filterable-list-filters {
+    align-items: baseline;
+    background: #ddd;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    list-style: none;
+    padding: 20px;
+
+    li {
+      align-self: flex-end;
+      padding: 0 20px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      label {
+        font-weight: 600;
+        line-height: 1.8;
+      }
+
+      input,
+      select {
+        padding: 10px;
+        width: 100%;
+      }
+
+      button {
+        background: #12aa8d;
+        border: 0;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px;
+        width: 150px;
+      }
+    }
+  }
+
+  .filterable-list-items {
+    background: #fff;
+
+    .mission-count {
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    ul {
+      padding: 0 20px;
+
+      li {
+        border-bottom: 1px solid #eee;
+        display: flex;
+        padding: 20px 0;
+        justify-content: center;
+
+        &:last-child {
+          border: none;
+        }
+  
+        .mission-patch,
+        .flight-details,
+        .flight-number {
+          margin: 0 10px;
+        }
+  
+        .mission-patch {
+          flex: 0 0 100px;
+          max-height: 100px;
+          width: 100px;
+        }
+  
+        .flight-details {
+          flex: 1;
+
+          .failed-mission {
+            color: red;
+          }
+
+          .links {
+            margin: 20px 0;
+            padding: 0;
+
+            li {
+              border: 1px solid #ddd;
+              border-radius: 5px;
+              display: inline-block;
+              margin: 0 10px 10px 0;
+              padding: 0;
+
+              a {
+                color: #666;
+                display: inline-block;
+                text-decoration: none;
+                padding: 10px;
+
+                &:hover {
+                  background: #eee;
+                }
+              }
+            }
+          }
+        }
+  
+        .flight-number {
+          flex: 0 0 200px;
+          text-align: center;
+  
+          h3 {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .filterable-list {
+    .filterable-list-filters {
+      flex-wrap: wrap;
+
+      li {
+        margin: 5px 10px;
+        padding: 0;
+      }
+    }
+
+    .filterable-list-items {
+      ul {
+        li {
+          flex-direction: column;
+
+          .mission-patch {
+            align-self: center;
+            order: 1;
+          }
+
+          .flight-details {
+            margin: 20px 0 0;
+            order: 3;
+
+            .links {
+              margin-bottom: 0;
+            }
+          }
+
+          .flight-number {
+            flex: 2;
+            order: 1;
+          }
+        }
+      }
+    }
+  }
+}
