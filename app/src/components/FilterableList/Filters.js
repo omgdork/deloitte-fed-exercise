@@ -1,19 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export class Filters extends React.PureComponent {
-  state = {
-    keywords: '',
-    launchPad: '',
-    minYear: '',
-    maxYear: '',
-  };
+class Filters extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      keywords: '',
+      launchPad: '',
+      minYear: 0,
+      maxYear: 0,
+      isFilterDisabled: false,
+    };
+  }
 
   onInputChange = (e) => {
     const field = {};
     const { name, value } = e.target;
 
     field[name] = value;
+    
+    this.setState({
+      ...field,
+    }, () => {
+      if ((name === 'minYear' && this.state.maxYear !== 0 && parseInt(this.state.maxYear, 10) < parseInt(value, 10))
+        || (name === 'maxYear' && this.state.minYear !== 0 && parseInt(this.state.minYear, 10) > parseInt(value, 10))) {
+
+          console.log(name, value, this.state);
+        this.setState({
+          isFilterDisabled: true,
+        }, () => alert('Invalid year range.'));
+      } else {
+        this.setState({
+          isFilterDisabled: false,
+        });
+      }
+    });
+
     this.props.onInputChange(field);
   };
 
@@ -87,7 +109,9 @@ export class Filters extends React.PureComponent {
           </select>
         </li>
         <li>
-          <button onClick={this.props.onFilter}>
+          <button
+            disabled={this.state.isFilterDisabled}
+            onClick={this.props.onFilter}>
             Apply
           </button>
         </li>
