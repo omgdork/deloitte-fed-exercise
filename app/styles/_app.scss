@@ -70,6 +70,7 @@ footer[role="contentinfo"] {
   }
 
   p {
+    color: #a2acae;
     float: left;
   }
 
@@ -91,6 +92,7 @@ footer[role="contentinfo"] {
     align-items: baseline;
     background: #f9fafa;
     border-bottom: 1px solid #d5d9de;
+    border-radius: 5px 5px 0 0;
     display: flex;
     list-style: none;
     padding: 20px;
@@ -123,7 +125,7 @@ footer[role="contentinfo"] {
       select {
         -moz-appearance: none;
         -webkit-appearance: none;
-        background: url(/assets/down-chevron-black.svg) no-repeat calc(100% - 10px) 10px;
+        background: #fff url(/assets/down-chevron-black.svg) no-repeat calc(100% - 10px) 10px;
         background-size: 15px;
         padding-right: 35px;
       }
@@ -139,6 +141,7 @@ footer[role="contentinfo"] {
 
         &:disabled {
           background: #eee;
+          color: #bbb;
           cursor: initial;
         }
       }
@@ -147,6 +150,7 @@ footer[role="contentinfo"] {
 
   .filterable-list-items {
     background: #fff;
+    border-radius: 0 0 5px 5px;
 
     .mission-count {
       padding: 20px 0;
@@ -181,12 +185,16 @@ footer[role="contentinfo"] {
         .flight-details {
           flex: 1;
 
-          .failed-mission {
-            color: #ec5f7a;
+          h4 {
+            margin: 10px 0;
+
+            .failed-mission {
+              color: #ec5f7a;
+            }
           }
 
           .links {
-            margin: 20px 0;
+            margin: 40px 0 0;
             padding: 0;
 
             li {
