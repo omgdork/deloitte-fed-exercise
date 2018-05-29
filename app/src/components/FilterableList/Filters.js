@@ -62,7 +62,7 @@ export class Filters extends React.PureComponent {
             id="filter-launch-pad"
             name="launchPad"
             onChange={this.onInputChange}>
-            <option>Any</option>
+            <option value="">Any</option>
             {this.getLaunchPadOptions()}
           </select>
         </li>
@@ -72,7 +72,7 @@ export class Filters extends React.PureComponent {
             id="filter-min-year"
             name="minYear"
             onChange={this.onInputChange}>
-            <option>Any</option>
+            <option value="">Any</option>
             {this.getYearOptions()}
           </select>
         </li>
@@ -82,7 +82,7 @@ export class Filters extends React.PureComponent {
             id="filter-max-year"
             name="maxYear"
             onChange={this.onInputChange}>
-            <option>Any</option>
+            <option value="">Any</option>
             {this.getYearOptions()}
           </select>
         </li>
