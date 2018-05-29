@@ -54,10 +54,10 @@ const FilteredList = (props) => {
         {links.reddit_campaign ? generateLink('Reddit Campaign', links.reddit_campaign) : null}
         {links.reddit_launch ? generateLink('Reddit Launch', links.reddit_launch) : null}
         {links.reddit_recovery ? generateLink('Reddit Recovery', links.reddit_recovery) : null}
-        {links.reddit_media ? generateLink('Reddit Recovery', links.reddit_media) : null}
+        {links.reddit_media ? generateLink('Reddit Media', links.reddit_media) : null}
         {links.presskit ? generateLink('Press Kit', links.presskit) : null}
         {links.article_link ? generateLink('Article', links.article_link) : null}
-        {links.watch_video ? generateLink('Watch Video', links.watch_video) : null}
+        {links.video_link ? generateLink('Watch Video', links.video_link) : null}
       </ul>
     );
   };
