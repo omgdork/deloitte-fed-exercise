@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+html {
+  background: #ededed;
+}
+
 header[role=banner] {
   background: url('/assets/space-photo.jpeg') no-repeat center center;
   background-size: cover;
@@ -52,12 +56,10 @@ header[role=banner] {
 }
 
 main[role=main] {
-  background: #eee;
   padding: 40px 40px 0;
 }
 
 footer[role="contentinfo"] {
-  background: #eee;
   padding: 40px;
 
   &:before,
@@ -87,8 +89,8 @@ footer[role="contentinfo"] {
 
   .filterable-list-filters {
     align-items: baseline;
-    background: #ddd;
-    border-bottom: 1px solid #ccc;
+    background: #f9fafa;
+    border-bottom: 1px solid #d5d9de;
     display: flex;
     list-style: none;
     padding: 20px;
@@ -112,17 +114,23 @@ footer[role="contentinfo"] {
 
       input,
       select {
-        padding: 10px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: url(/assets/down-chevron-black.svg) no-repeat calc(100% - 10px) 10px;
+        background-size: 15px;
+        border: 1px solid #d5d9de;
+        border-radius: 5px;
+        padding: 10px 35px 10px 10px;
         width: 100%;
       }
 
       button {
-        background: #12aa8d;
+        background: #1fbba6;
         border: 0;
         border-radius: 5px;
         color: #fff;
         cursor: pointer;
-        padding: 10px;
+        padding: 12px 10px;
         width: 150px;
       }
     }
@@ -140,7 +148,7 @@ footer[role="contentinfo"] {
       padding: 0 20px;
 
       li {
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #f0f2f4;
         display: flex;
         padding: 20px 0;
         justify-content: center;
@@ -165,7 +173,7 @@ footer[role="contentinfo"] {
           flex: 1;
 
           .failed-mission {
-            color: red;
+            color: #ec5f7a;
           }
 
           .links {
@@ -173,14 +181,14 @@ footer[role="contentinfo"] {
             padding: 0;
 
             li {
-              border: 1px solid #ddd;
+              border: 1px solid #e9ecef;
               border-radius: 5px;
               display: inline-block;
               margin: 0 10px 10px 0;
               padding: 0;
 
               a {
-                color: #666;
+                color: #7c8a8d;
                 display: inline-block;
                 text-decoration: none;
                 padding: 10px;

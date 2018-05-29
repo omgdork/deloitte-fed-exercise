@@ -6,7 +6,7 @@ const Header = (props) => {
       <a href="/">{props.title}</a>
       <h1>{props.banner}</h1>
       <button onClick={props.handleClick}>
-        <img src="/assets/down-chevron.svg" alt="Down chevron" />
+        <img src="/assets/down-chevron-white.svg" alt="Down chevron" />
       </button>
     </header>
   );
