@@ -56,6 +56,7 @@ header[role=banner] {
 }
 
 main[role=main] {
+  display: block;
   padding: 40px 40px 0;
 }
 
@@ -125,9 +126,16 @@ footer[role="contentinfo"] {
       select {
         -moz-appearance: none;
         -webkit-appearance: none;
-        background: #fff url(/assets/down-chevron-black.svg) no-repeat calc(100% - 10px) 10px;
-        background-size: 15px;
+        background: #fff;
+        background-image: url(/assets/down-chevron-black.svg);
+        background-position: calc(100% - 10px) 10px;
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
         padding-right: 35px;
+
+        &::-ms-expand {
+          display: none;
+        }
       }
 
       button {
