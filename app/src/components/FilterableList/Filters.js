@@ -24,8 +24,6 @@ class Filters extends React.Component {
     }, () => {
       if ((name === 'minYear' && this.state.maxYear !== 0 && parseInt(this.state.maxYear, 10) < parseInt(value, 10))
         || (name === 'maxYear' && this.state.minYear !== 0 && parseInt(this.state.minYear, 10) > parseInt(value, 10))) {
-
-          console.log(name, value, this.state);
         this.setState({
           isFilterDisabled: true,
         }, () => alert('Invalid year range.'));
